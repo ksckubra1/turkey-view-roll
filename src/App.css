@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply overflow-hidden w-screen h-screen justify-center flex items-center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.view {
+  @apply w-screen h-screen object-cover
+}
+
+
+@keyframes rollNfade {
+  0% {
+    rotate: 0;
+    opacity: 1;
+    filter: blur(0);
+    scale: 1;
+  }
+
+  50%{
+    scale: 4;
+  }
+
+  100% {
+    rotate: 360deg;
+    opacity: 0;
+    filter: blur(40px);
+    scale: 1;
+  }
+}
+
+@keyframes roll {
+  0% {
+    rotate: 0;
+    scale: 1;
+  }
+
+  50%{
+    scale: 4;
+  }
+
+
+  100% {
+    rotate: 360deg;
+    scale: 1;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    transform: translateY(150px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes textFadeOut {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-150px);
+  }
+}
+
+.front1 {
+  animation: rollNfade 1s forwards;
+  animation-delay: .2s;
+}
+
+.front2 {
+  animation: rollNfade 1s forwards;
+  animation-delay: .1s;
+}
+
+.front3 {
+  animation: rollNfade 1s forwards;
+}
+
+.back1 {
+  animation: roll 1s forwards;
+  animation-delay: .2s;
+}
+
+.back2 {
+  animation: roll 1s forwards;
+  animation-delay: .1s;
+}
+
+.back3 {
+  animation: roll 1s forwards;
+}
+
+.text-anim-in {
+  animation: textFadeIn .5s forwards;
+  animation-play-state: running;
+}
+
+.text-anim-out {
+  animation: textFadeOut .5s forwards;
+  animation-play-state: running;
+}
+
+.title-text{
+  @apply uppercase tracking-[50px] pl-[50px];
+  font-family: "Crimson Text",sans-serif;
+}
